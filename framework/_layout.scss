@@ -1,0 +1,29 @@
+////
+/// Framework - Layouts
+/// @group frameworkComponents
+////
+
+$layouts: (
+  page: (
+    width: 1200px,
+    gutters: (
+      small: 20px,
+      large: 40px
+    )
+  )
+) !default;
+
+/// Set the gutters of an element using padding.
+/// @param {map} $gutters - A map containing gutter sizes for each breakpoint.
+/// @example
+///   @include set-gutters($grid-column-gutter)
+@mixin set-gutters($gutters: $grid-column-gutter) {
+  @if type-of($gutters == map) {
+    @each $bp, $size in $gutters {
+      $size: rem-calc($size);
+      @include breakpoint($bp) {
+        @include left-right(padding, $size);
+      }
+    }
+  }
+}

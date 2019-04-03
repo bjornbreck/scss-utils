@@ -1,0 +1,59 @@
+////
+/// General theme configuration.
+/// @group Configuration
+////
+
+/// z-index organization.
+/// See links below for more information.
+///
+/// @link https://css-tricks.com/handling-z-index/
+/// @link http://www.sitepoint.com/using-sass-maps/
+$z-layers: (
+  skip-link: 8000,
+  ajax-throbber: 7000,
+  debug: 1000,
+  above: 1,
+  default: 0,
+  under: -1,
+  bottomless-pit: -9999,
+
+  // example nested z-index.
+  example: (
+    default: 100,
+    image: -2
+  )
+);
+
+/// Button config
+$buttons: (
+  _base: (
+    background: slategray,
+    color: #fff,
+    border: slategray,
+    active-background: darken(slategray, 10%),
+    active-color: #fff,
+    active-border: darken(slategray, 10%)
+  ),
+  blue: (
+    extend: _base
+  )
+);
+
+/// Custom font icon set
+$icons: (
+  check: "\e86c",
+  error: "\e000",
+  info: "\e88e",
+  settings: "\e8b8",
+  edit: "\e902",
+  trash: "\e903",
+  view: "\e905",
+  gear: "\e904"
+);
+
+/// Grid layout
+$grid-column-count: 12;
+$grid-column-gutter: (
+  small: 20px,
+  medium: 30px,
+);
